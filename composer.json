@@ -1,0 +1,11 @@
+{
+    "name": "thopra/styleguide-template-installer",
+    "type": "composer-plugin",
+    "license": "MIT",
+    "extra": {
+        "class": "Thopra\\Composer\\StyleguideInstallerPlugin"
+    },
+    "require": {
+        "composer-plugin-api": "1.0.0"
+    }
+}
