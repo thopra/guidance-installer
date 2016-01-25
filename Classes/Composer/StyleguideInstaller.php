@@ -12,7 +12,13 @@ class StyleguideInstaller extends LibraryInstaller
      */
     public function getInstallPath(PackageInterface $package)
     {
-        return 'Styleguide/Templates/'.$package;
+        $prefix = substr($package->getPrettyName(), 0, 27);
+        if ('thopra/styleguide-template-' !== $prefix) {
+            throw new \InvalidArgumentException(
+                'Unable to install styleguide template. Templates MUST be named "thopra/styleguide-template-*"'
+            );
+        }
+        return 'Styleguide/Templates/'.str_replace($prefix, "", $package);
     }
 
     /**
