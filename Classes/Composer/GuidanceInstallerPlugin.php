@@ -5,11 +5,11 @@ use Composer\Composer;
 use Composer\IO\IOInterface;
 use Composer\Plugin\PluginInterface;
 
-class StyleguideInstallerPlugin implements PluginInterface
+class GuidanceInstallerPlugin implements PluginInterface
 {
     public function activate(Composer $composer, IOInterface $io)
     {
-        $installer = new StyleguideInstaller($io, $composer);
+        $installer = new GuidanceInstaller($io, $composer);
         $composer->getInstallationManager()->addInstaller($installer);
     }
 }
