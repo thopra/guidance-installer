@@ -12,6 +12,12 @@ class GuidanceInstaller extends LibraryInstaller
      */
     public function getInstallPath(PackageInterface $package)
     {
+        $extraConfig = $this->composer->getPackage()->getExtra();
+        if (is_array($extraConfig) && is_array($extraConfig['thopra/guidance'])) {
+            if (isset($extraConfig['thopra/guidance']['install-path'])) {
+                return $extraConfig['thopra/guidance']['install-path'];
+            }
+        }
         return 'guidance';
     }
 
