@@ -6,7 +6,7 @@
         "class": "Thopra\\Composer\\GuidanceInstallerPlugin"
     },
     "require": {
-        "composer-plugin-api": "^1.0.0"
+        "composer-plugin-api": "~1 || ~2"
     },
     "autoload": {
         "psr-4" : {
